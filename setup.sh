@@ -70,6 +70,7 @@ function Prepare_System_For_Installation() {
 }
 
 
+# Phase 1 - prepare
 if Has_Internet_Connection -eq 1; then
 	Print_Message_And_Sleep "Fix your internet connection issues and rerun the script!" 5s
 	exit;
@@ -81,7 +82,15 @@ export -f Print_Message_And_Sleep
 export -f Has_Internet_Connection
 export username
 currentDir=$(pwd)
-/bin/su -m -c "source $currentDir/resources/installation_supplement_1.sh" - $username
+# Phase 2 - install resources
+/bin/su -m -c "source $currentDir/resources/installation_supplement_1.sh" - $username # download Minecraft server as minecraft user
+source $currentDir/resources/installation_supplement_2.sh # Download McMyAdmin and open port 8080 as sudo
+/bin/su -m -c "source $currentDir/resources/installation_supplement_3.sh" - $username # Install McMyAdmin as minecraft user
+# Phase 3 - exit
+Print_Message_And_Sleep "#################" 1s
+Print_Message_And_Sleep "All done!" 1s
+Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
+Print_Message_And_Sleep "Please, refer to this website for more information: " 5s
 exit
 
 # To delete the user and it's home directory run this command: sudo userdel -f -r minecraft

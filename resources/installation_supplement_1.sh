@@ -13,7 +13,7 @@ function Create_Directories_For_Installation() {
 function Download_And_Install_Server() {
     wget https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar -O minecraft_server.1.14.4.jar
     touch run.sh
-    echo "java -Xmx1280M -Xms1024M -jar minecraft_server.1.14.4.jar nogui" > run.sh
+    echo "java -Xmx1024M -Xms1024M -server -XX:+UseG1GC -jar minecraft_server.1.14.4.jar nogui" > run.sh
     chmod +x run.sh
 }
 
@@ -35,4 +35,3 @@ Print_Message_And_Sleep "IMPORTANT !!!" 2s
 Print_Message_And_Sleep "#################" 1s
 Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
 Print_Message_And_Sleep "Please, refer to this website for more information: " 5s
-exit
