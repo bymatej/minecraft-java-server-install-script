@@ -45,7 +45,7 @@ function Print_Message_And_Sleep() {
 # Prepare user for installation
 function Prepare_System_For_Installation() {
 	Print_Message_And_Sleep "Downloading required files..." 1s
-	sudo apt --assume-yes update && sudo apt --assume-yes upgrade
+	sudo apt --assume-yes update
 	sudo apt --assume-yes install openjdk-8-jre-headless screen
 
 	Print_Message_And_Sleep "Create the user that will be used for Minecraft Java Edition server" 1s
@@ -81,7 +81,7 @@ export -f Print_Message_And_Sleep
 export -f Has_Internet_Connection
 export username
 currentDir=$(pwd)
-/bin/su -m -c "source $currentDir/1_install.sh" - $username
+/bin/su -m -c "source $currentDir/resources/installation_supplement_1.sh" - $username
 exit
 
 # To delete the user and it's home directory run this command: sudo userdel -f -r minecraft
