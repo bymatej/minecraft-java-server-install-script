@@ -90,7 +90,8 @@ source $currentDir/resources/installation_supplement_2.sh # Download McMyAdmin a
 Print_Message_And_Sleep "#################" 1s
 Print_Message_And_Sleep "All done!" 1s
 #Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
-Print_Message_And_Sleep "Please, refer to this website for more information: " 5s
+Print_Message_And_Sleep "Go to http://localhost:8080 and log in with your McMyAdmin username and password, and configure your server!" 5s
+Print_Message_And_Sleep "For more information please refer to this website: https://bymatej.com/" 5s
 exit
 
 # To delete the user and it's home directory run this command: sudo userdel -f -r minecraft
