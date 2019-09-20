@@ -8,7 +8,7 @@ password="";
 
 # Checks if the script is run as root
 function Exit_If_Not_Root() {
-    if [ "$EUID" -ne 0 ]; then 
+    if [ "$EUID" -ne 0 ]; then
         echo "Please run this script as root"
         exit
     fi
@@ -89,7 +89,7 @@ source $currentDir/resources/installation_supplement_2.sh # Download McMyAdmin a
 # Phase 3 - exit
 Print_Message_And_Sleep "#################" 1s
 Print_Message_And_Sleep "All done!" 1s
-Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
+#Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
 Print_Message_And_Sleep "Please, refer to this website for more information: " 5s
 exit
 

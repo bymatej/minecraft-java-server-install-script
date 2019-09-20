@@ -28,10 +28,10 @@ if Has_Internet_Connection -eq 1; then
 	exit;
 fi
 Create_Directories_For_Installation
-Download_And_Install_Server
-Cleanup
-Print_Message_And_Sleep "Matej's Minecraft Java Edition Server script has finished successfully!" 1s
-Print_Message_And_Sleep "IMPORTANT !!!" 2s
-Print_Message_And_Sleep "#################" 1s
-Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
-Print_Message_And_Sleep "Please, refer to this website for more information: " 5s
+#Download_And_Install_Server
+#Cleanup
+#Print_Message_And_Sleep "Matej's Minecraft Java Edition Server script has finished successfully!" 1s
+#Print_Message_And_Sleep "IMPORTANT !!!" 2s
+#Print_Message_And_Sleep "#################" 1s
+#Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
+#Print_Message_And_Sleep "Please, refer to this website for more information: " 5s
