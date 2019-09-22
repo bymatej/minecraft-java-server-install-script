@@ -1,0 +1,44 @@
+Ensure you have a working internet connection.
+
+Update your system.
+sudo apt --assume-yes update
+
+Install Java 8.
+sudo apt --assume-yes install openjdk-8-jre-headless screen
+
+Add user for minecraft.
+sudo adduser <DESIRED_USERNAME_FOR_MINECRAFT_USER>
+If the username is minecraft, then the command is:
+sudo adduser minecraft
+When prompted for password enter it (and retype when prompted). Fill out the rest of the information.
+
+Execute the following commands as sudo. This downloads the etc.zip (mono - required for McMyAdmin) and sets iptables (required for connections on certain ports to work properly).
+sudo cd /usr/local
+sudo wget http://mcmyadmin.com/Downloads/etc.zip
+sudo unzip etc.zip
+sudo rm etc.zip
+sudo iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT 
+sudo iptables -A INPUT -p tcp -m tcp --dport 25565 -j ACCEPT 
+sudo iptables-save
+
+Log in as newly created user: 
+su <USERNAME_FOR_MINECRAFT_USER>
+If the username is minecraft, then the command is:
+su minecraft
+For the rest of the tutorial, I will assume refer to the. minecraft user as <MINECRAFT_USERNAME>. Replace it with the username you created earlier.
+cd /home/<MINECRAFT_USERNAME>
+mkdir minecraft-server
+cd minecraft-server
+mkdir /home/<MINECRAFT_USERNAME>/minecraft-server/McMyAdmin
+cd /home/<MINECRAFT_USERNAME>/minecraft-server/McMyAdmin
+wget http://mcmyadmin.com/Downloads/MCMA2_glibc26_2.zip
+unzip MCMA2_glibc26_2.zip
+rm MCMA2_glibc26_2.zip
+./MCMA2_Linux_x86_64 -setpass PASSWORD -configonly
+Replace PASSWORD with the password of your choice.
+
+Run the server like this:
+./MCMA2_Linux_x86_64
+
+Always log in as <MINECRAFT_USERNAME> and go to /home/<MINECRAFT_USERNAME>/minecraft-server/McMyAdmin/ and run ./MCMA2_Linux_x86_64 to fire up your server.
+Then, open your browser and go to http://localhost:8080 and log in with your McMyAdmin username and password, and configure your server! Default username is admin.
