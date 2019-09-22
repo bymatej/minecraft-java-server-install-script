@@ -91,6 +91,7 @@ Print_Message_And_Sleep "#################" 1s
 Print_Message_And_Sleep "All done!" 1s
 #Print_Message_And_Sleep "Login as $username user and go to ~/minecraft-server/ directory and run run.sh command. Then, agree to EULA (follow instructions!!!) and then edit server.properties as desired." 5s
 Print_Message_And_Sleep "Go to http://localhost:8080 and log in with your McMyAdmin username and password, and configure your server!" 5s
+Print_Message_And_Sleep "Default username is admin and default password is admin. MAKE SURE YOU CHANGE YOUR PASSWORD!" 5s
 Print_Message_And_Sleep "For more information please refer to this website: https://bymatej.com/" 5s
 exit
 
