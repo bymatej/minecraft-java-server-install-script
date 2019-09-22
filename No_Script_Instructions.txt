@@ -3,17 +3,18 @@ Ensure you have a working internet connection.
 Update your system.
 sudo apt --assume-yes update
 
-Install Java 8.
+Install Java 8 and screen (if you want to run commands with screen).
 sudo apt --assume-yes install openjdk-8-jre-headless screen
 
 Add user for minecraft.
-sudo adduser <DESIRED_USERNAME_FOR_MINECRAFT_USER>
-If the username is minecraft, then the command is:
+sudo adduser <MINECRAFT_USERNAME>
+The <MINECRAFT_USERNAME> represents the usernem for the user that will be used for installing the game-related files. If the username is minecraft, then the command is:
 sudo adduser minecraft
 When prompted for password enter it (and retype when prompted). Fill out the rest of the information.
+For the rest of the tutorial, I will refer to the minecraft user as <MINECRAFT_USERNAME>. Replace it with the username you just created.
 
 Execute the following commands as sudo. This downloads the etc.zip (mono - required for McMyAdmin) and sets iptables (required for connections on certain ports to work properly).
-sudo cd /usr/local
+cd /usr/local
 sudo wget http://mcmyadmin.com/Downloads/etc.zip
 sudo unzip etc.zip
 sudo rm etc.zip
@@ -22,10 +23,9 @@ sudo iptables -A INPUT -p tcp -m tcp --dport 25565 -j ACCEPT
 sudo iptables-save
 
 Log in as newly created user: 
-su <USERNAME_FOR_MINECRAFT_USER>
+su <MINECRAFT_USERNAME>
 If the username is minecraft, then the command is:
 su minecraft
-For the rest of the tutorial, I will assume refer to the. minecraft user as <MINECRAFT_USERNAME>. Replace it with the username you created earlier.
 cd /home/<MINECRAFT_USERNAME>
 mkdir minecraft-server
 cd minecraft-server
@@ -42,3 +42,6 @@ Run the server like this:
 
 Always log in as <MINECRAFT_USERNAME> and go to /home/<MINECRAFT_USERNAME>/minecraft-server/McMyAdmin/ and run ./MCMA2_Linux_x86_64 to fire up your server.
 Then, open your browser and go to http://localhost:8080 and log in with your McMyAdmin username and password, and configure your server! Default username is admin.
+
+In case you messed something up, and you want to start over, simply delete the newly created user and all it's files. Like this: 
+sudo userdel -f -r <MINECRAFT_USERNAME>
