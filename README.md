@@ -39,5 +39,10 @@ And here: https://hub.docker.com/r/bymatej/minecraft-server
 - Link: https://mrcrayfish.com/mods?id=vehicle
 - Jar: https://www.dropbox.com/s/p22np06hizycall/vehicle-0.44.1-mc1.12.2.jar?dl=1
 
+### Structurize
+**Description**: Helps with building large structures.
+- Link: https://www.curseforge.com/minecraft/mc-mods/structurize
+- Jar: https://www.curseforge.com/minecraft/mc-mods/structurize/download/2640518
+
 ## Todo
 Check if any of the mods require additional resources (resource packs, skins, etc.)
